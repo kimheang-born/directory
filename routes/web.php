@@ -25,3 +25,4 @@ Route::middleware('auth')->group(function() {
     Route::post('/dashboard', 'HomeController@create')->name('create');
 });
 
+//Added by Kimheang
