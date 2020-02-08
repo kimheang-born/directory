@@ -37,31 +37,58 @@
                         @csrf
                         <div class="form-group">
                             <label for="title">Title</label>
-                            <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" placeholder="Enter title" name="title">
+                            <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" placeholder="Enter title" name="title" value="{{ old('title') }}">
                             @error('title')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
+                        <label for="description">Description</label>
+                        <textarea class="form-control @error('description') is-invalid @enderror" placeholder="Enter description" rows="5" id="description" name="description" value="{{ old('description') }}"></textarea>
+                        @error('description')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                         <div class="form-group">
-                            <label for="body">Body</label>
-                            <textarea class="form-control @error('body') is-invalid @enderror" placeholder="Enter body" rows="5" id="body" name="body"></textarea>
-                            @error('body')
+                            <label for="location">Location</label>
+                            <input type="text" class="form-control @error('location') is-invalid @enderror" id="location" placeholder="Enter location" name="location" value="{{ old('location') }}">
+                            @error('location')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="Image">Image</label>
-                            <input type="text" class="form-control @error('image') is-invalid @enderror" id="Image" placeholder="Enter image" name="image">
+                            <label for="phone">Phone</label>
+                            <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" placeholder="Enter phone" name="phone" value="{{ old('phone') }}">
+                            @error('phone')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Enter email" name="email" value="{{ old('email') }}">
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="image">Image</label>
+                            <input type="text" class="form-control @error('image') is-invalid @enderror" id="image" placeholder="Enter image" name="image" value="{{ old('image') }}">
                             @error('image')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
+
+                  
                         <!-- <div class="form-group">
                             <input type="file" name="image">
                         </div>            -->

@@ -26,19 +26,22 @@ class HomeController extends Controller
         // $new_name = rand().'.'.$image->getClientOriginalExtension();
         // $image->move(public_path("img/listing"), $new_name);
 
-        Validator::make($data, [
-            'title'     => ['required', 'max:255'],
-            'body'      => ['required', 'string', 'max:255'],
-            'image'     => ['required', 'max:255'],
-        ])->validate();
+        $request->validate([
+            'title'         => 'required|max:255',
+            'description'   => 'required|max:255',
+            'location'      => 'required|max:255',
+            'phone'         => 'required',
+            'email'         => 'required|email|unique:listings,email|max:255',
+            'image'         => 'required|max:255',
+        ]);
 
         $lsting = Listing::create([
             'title'         => $request->input('title'),
-            'body'          => $request->input('body'),
+            'description'   => $request->input('description'),
+            'location'      => $request->input('location'),
+            'phone'         => $request->input('phone'),
+            'email'         => $request->input('email'),
             'image'         => $request->input('image'),
-            'active'        => 1,
-            'created_at'    => '2020-01-03 15:22:27',
-            'updated_at'    => '2020-01-03 15:22:27'
         ]);      
 
         return redirect(route('dashboard'))->with('success', 'new record has been created.');

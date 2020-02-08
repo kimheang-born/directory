@@ -15,13 +15,13 @@ class CreateListingsTable extends Migration
     {
         Schema::create('listings', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title');
-            $table->longText('description');
-            $table->string('location');
-            $table->string('phone');
-            $table->string('email');
-            $table->string('image');        
-            $table->unsignedBigInteger('user_id')->index();
+            $table->string('title')->nullable();
+            $table->longText('description')->nullable();
+            $table->string('location')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('email')->nullable();
+            $table->string('image')->nullable();        
+            $table->unsignedBigInteger('user_id')->index()->nullable();
             $table->unsignedBigInteger('category_id')->index()->nullable();
             $table->timestamps();
 

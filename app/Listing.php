@@ -5,6 +5,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Listing extends Model
 {
+    protected $fillable = [
+        'title',
+        'description',
+        'location',
+        'phone',
+        'email',
+        'image',
+    ];
 
     public function category()
     {
