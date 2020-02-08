@@ -24,5 +24,3 @@ Route::middleware('auth')->group(function() {
     Route::get('/dashboard', 'HomeController@index')->name('dashboard');
     Route::post('/dashboard', 'HomeController@create')->name('create');
 });
-
-//Added by Kimheang
